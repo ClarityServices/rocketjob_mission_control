@@ -104,9 +104,7 @@ var removeFields = function () {
 }(); // Wait for turbo to load, otherwise `document.querySelectorAll()` won't work
 
 
-window.addEventListener('DOMContentLoaded', function () {
-  return new addFields();
-});
-window.addEventListener('DOMContentLoaded', function () {
-  return new removeFields();
+$(document).on('turbo:load', function () {
+  new addFields();
+  new removeFields();
 });
