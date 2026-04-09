@@ -11,7 +11,6 @@
 // about supported directives.
 //
 //= require rocket_job_mission_control/jquery-3.5.1.min
-//= require rails-ujs
 //= require turbo
 //= require rocket_job_mission_control/datatables.min
 //= require rocket_job_mission_control/datatable_init

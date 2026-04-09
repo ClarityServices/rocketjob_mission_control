@@ -18,6 +18,3 @@ class ActionController::TestCase
   end
 end
 
-class ActionDispatch::IntegrationTest
-  include TurboAssertionsHelper
-end
