@@ -10,6 +10,8 @@ module RocketJobMissionControl
   end
 
   class ApplicationControllerTest < ActionController::TestCase
+    tests TestController
+
     setup do
       @routes = ActionDispatch::Routing::RouteSet.new
       @routes.draw do
