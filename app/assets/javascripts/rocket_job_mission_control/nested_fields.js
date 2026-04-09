@@ -63,35 +63,19 @@ var addFields = function () {
 }();
 
 var removeFields = function () {
-  // This executes when the function is instantiated.
   function removeFields() {
     _classCallCheck(this, removeFields);
-
-    this.iterateLinks();
   }
 
   _createClass(removeFields, [{
-    key: 'iterateLinks',
-    value: function iterateLinks() {
-      var _this2 = this;
-
-      // Use event delegation to ensure any fields added after the page loads are captured.
-      document.addEventListener('click', function (e) {
-        if (e.target && e.target.className == "remove_fields btn btn-danger") {
-          _this2.handleClick(e.target, e);
-        }
-      });
-    }
-  }, {
     key: 'handleClick',
     value: function handleClick(link, e) {
-      // Stop the function from executing if a link or event were not passed into the function.
-      if (!link || !e) return; // Prevent the browser from following the URL.
+      if (!link || !e) return;
 
-      e.preventDefault(); // Find the parent wrapper for the set of nested fields.
+      e.preventDefault();
 
-      var fieldParent = link.closest('.nested-fields'); // If there is a parent wrapper, find the hidden delete field.
-      var deleteField = fieldParent ? fieldParent.querySelector('input[type="hidden"]') : null; // If there is a delete field, update the value to `1` and hide the corresponding nested fields.
+      var fieldParent = link.closest('.nested-fields');
+      var deleteField = fieldParent ? fieldParent.querySelector('input[type="hidden"]') : null;
 
       if (deleteField) {
         deleteField.value = 1;
@@ -101,10 +85,17 @@ var removeFields = function () {
   }]);
 
   return removeFields;
-}(); // Wait for turbo to load, otherwise `document.querySelectorAll()` won't work
+}();
 
+// Set up removeFields delegation once globally (survives Turbo navigations).
+var _removeFieldsInstance = new removeFields();
+document.addEventListener('click', function (e) {
+  if (e.target && e.target.className == "remove_fields btn btn-danger") {
+    _removeFieldsInstance.handleClick(e.target, e);
+  }
+});
 
+// Re-bind addFields on each Turbo navigation to pick up new DOM elements.
 $(document).on('turbo:load', function () {
   new addFields();
-  new removeFields();
 });

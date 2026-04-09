@@ -1,5 +1,5 @@
 $(document).on("turbo:load", function () {
-  $(".selectize").selectize({
+  $(".selectize").not(".selectized").selectize({
     create:       true,
     hideSelected: true
   });
