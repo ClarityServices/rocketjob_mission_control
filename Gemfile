@@ -5,7 +5,6 @@ gemspec
 gem "rails", "~> 7.2.3"
 gem "sprockets-rails"
 
-gem "minitest"
 gem "rake"
 gem "rubyzip", platform: :ruby
 gem "sprockets"
