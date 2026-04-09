@@ -6,7 +6,7 @@ module RocketJobMissionControl
 
     rescue_from AccessGranted::AccessDenied do |exception|
       raise exception if Rails.env.development? || Rails.env.test?
-      redirect_to :back, alert: "Access not authorized."
+      redirect_back_or_to dirmon_entries_path, alert: "Access not authorized."
     end
 
     def index

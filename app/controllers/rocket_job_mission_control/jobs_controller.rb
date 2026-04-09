@@ -332,7 +332,7 @@ module RocketJobMissionControl
 
       raise exception if Rails.env.development? || Rails.env.test?
 
-      redirect_to :back
+      redirect_back_or_to jobs_path
     end
 
     def render_datatable(jobs, description, columns, sort_order)
