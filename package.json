@@ -1,0 +1,10 @@
+{
+  "private": true,
+  "scripts": {
+    "build:turbo-sprockets": "esbuild turbo_sprockets_entry.js --bundle --format=iife --target=es2015 --outfile=app/assets/javascripts/rocket_job_mission_control/turbo_sprockets_compat.js --legal-comments=none --banner:js='/* Rebuild: yarn build:turbo-sprockets (esbuild → ES2015 for Sprockets) */'"
+  },
+  "devDependencies": {
+    "@hotwired/turbo-rails": "^8.0.23",
+    "esbuild": "^0.25.0"
+  }
+}
