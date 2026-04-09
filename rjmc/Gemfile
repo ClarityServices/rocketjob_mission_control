@@ -2,7 +2,7 @@ source "https://rubygems.org"
 
 gem "amazing_print"
 gem "puma"
-gem "rails", "~> 7.1.0"
+gem "rails", "~> 7.2.3"
 gem "sprockets-rails"
 
 gem "rails_semantic_logger"
