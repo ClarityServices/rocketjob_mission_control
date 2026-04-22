@@ -10,6 +10,15 @@ module RocketJobMissionControl
   end
 
   class ApplicationControllerTest < ActionController::TestCase
+    tests TestController
+
+    setup do
+      @routes = ActionDispatch::Routing::RouteSet.new
+      @routes.draw do
+        get "test" => "rocket_job_mission_control/test#index"
+      end
+    end
+
     describe TestController do
       describe "#with_time_zone" do
         it "uses correct timezone with session and time_zone set" do

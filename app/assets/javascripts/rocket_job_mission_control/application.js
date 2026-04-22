@@ -11,8 +11,7 @@
 // about supported directives.
 //
 //= require rocket_job_mission_control/jquery-3.5.1.min
-//= require rails-ujs
-//= require turbolinks
+//= require rocket_job_mission_control/turbo_sprockets_compat
 //= require rocket_job_mission_control/datatables.min
 //= require rocket_job_mission_control/datatable_init
 //= require rocket_job_mission_control/bootstrap.min
@@ -20,4 +19,5 @@
 //= require rocket_job_mission_control/dirmon_entries
 //= require rocket_job_mission_control/selectize.min
 //= require rocket_job_mission_control/selectize_init
+//= require rocket_job_mission_control/nested_fields
 //

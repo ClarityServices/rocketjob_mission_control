@@ -16,8 +16,7 @@
                       <%= link_to(
                               "#{action.to_s.humanize.capitalize}",
                               rocket_job_mission_control.update_all_servers_path(server_action: action),
-                              method: :patch,
-                              data:   {confirm: t(:confirm, scope: [:server, :update_all], action: action.to_s.singularize.humanize.downcase)},
+                              data:   {turbo_method: :patch, turbo_confirm: t(:confirm, scope: [:server, :update_all], action: action.to_s.singularize.humanize.downcase)},
                               class:  'btn btn-default'
                           ) %>
                     <% end %>
@@ -35,7 +34,7 @@
         </div>
       </div>
 
-      <table class='table datatable servers-datatable' data-turbolinks='false' data-source='<%= @data_table_url %>' style='width: 100%'>
+      <table class='table datatable servers-datatable' data-turbo='false' data-source='<%= @data_table_url %>' style='width: 100%'>
         <thead>
           <tr>
             <th>Hostname : PID</th>

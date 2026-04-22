@@ -2,14 +2,14 @@ source "https://rubygems.org"
 
 gemspec
 
-gem "rails", "~> 7.1.0"
+gem "rails", "~> 7.2.3"
 gem "sprockets-rails"
 
-gem "appraisal"
-gem "minitest"
+gem "minitest", "~> 5.20"
 gem "rake"
 gem "rubyzip", platform: :ruby
 gem "sprockets"
+gem "mongoid", "~> 8.1"
 
 group :test do
   gem "minispec-rails", require: false

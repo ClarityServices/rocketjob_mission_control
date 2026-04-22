@@ -17,3 +17,4 @@ class ActionController::TestCase
     @routes = RocketJobMissionControl::Engine.routes
   end
 end
+
